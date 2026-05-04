@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GLOBE — Économie, géopolitique et finance décryptées</title>
+<meta name="description" content="GLOBE est une revue indépendante de vulgarisation économique, géopolitique et financière. Analyses, décryptages et données accessibles à tous.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://globe-revue.fr/">
+<meta property="og:title" content="GLOBE — Économie, géopolitique et finance décryptées">
+<meta property="og:description" content="Revue indépendante de vulgarisation économique, géopolitique et financière.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="GLOBE">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@globe_revue">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"GLOBE","url":"https://globe-revue.fr","description":"Revue indépendante d'analyse économique, géopolitique et financière","publisher":{"@type":"Organization","name":"GLOBE","url":"https://globe-revue.fr"}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#0f0e0d;--paper:#f5f3ef;--cream:#ede9e1;--accent:#c8382a;--accent-soft:#f2e8e7;--muted:#7a7570;--rule:#d8d4cc;--serif:'Playfair Display',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif;--mono:'DM Mono',monospace}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;overflow-x:hidden}
+
+/* TICKER */
+.ticker{background:var(--ink);color:var(--paper);padding:7px 0;overflow:hidden;font-family:var(--mono);font-size:11px;letter-spacing:.05em}
+.ticker-track{display:flex;animation:tick 38s linear infinite;white-space:nowrap;width:max-content}
+.ti{padding:0 2rem;display:inline-flex;align-items:center;gap:7px}
+.ti .up{color:#5cb85c}.ti .dn{color:#e05a5a}
+.tsep{color:#444;padding:0 .4rem}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* HEADER */
+header{border-bottom:1px solid var(--rule);background:var(--paper);position:sticky;top:0;z-index:100}
+.hinner{max-width:1240px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-family:var(--serif);font-size:20px;font-weight:700;letter-spacing:-.02em;color:var(--ink);text-decoration:none;display:flex;align-items:baseline;gap:3px}
+.logo-dot{color:var(--accent);font-size:24px;line-height:0;position:relative;top:3px}
+.nav-l{display:flex;gap:1.5rem;align-items:center}
+.nav-l a{font-size:12px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;text-decoration:none;color:var(--muted);transition:color .2s}
+.nav-l a:hover{color:var(--ink)}
+.nav-r{display:flex;align-items:center;gap:.7rem}
+.search-btn{background:none;border:none;cursor:pointer;padding:5px;color:var(--muted);display:flex;align-items:center;transition:color .2s}
+.search-btn:hover{color:var(--ink)}
+.nav-cta{background:var(--ink);color:var(--paper)!important;padding:6px 15px;border-radius:2px;font-size:11px!important;letter-spacing:.09em!important;transition:background .2s!important;text-decoration:none}
+.nav-cta:hover{background:var(--accent)!important}
+.burger{display:none;cursor:pointer;flex-direction:column;gap:5px;padding:4px;background:none;border:none}
+.burger span{display:block;width:20px;height:1.5px;background:var(--ink)}
+
+/* HERO */
+.hero{max-width:1240px;margin:0 auto;padding:3rem 2rem 2.5rem;display:grid;grid-template-columns:1fr 320px;gap:2.5rem;align-items:start;border-bottom:1px solid var(--rule)}
+.hero-kicker{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:.8rem;display:flex;align-items:center;gap:8px}
+.hero-kicker::before{content:'';display:block;width:18px;height:1px;background:var(--accent)}
+.hero h1{font-family:var(--serif);font-size:clamp(1.5rem,2.5vw,2rem);line-height:1.2;font-weight:700;letter-spacing:-.02em;margin-bottom:.85rem}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.hero-meta{font-size:11px;color:var(--muted);margin-bottom:1.2rem;display:flex;gap:1.1rem;align-items:center;font-family:var(--mono);flex-wrap:wrap}
+.hero-excerpt{font-size:15.5px;line-height:1.75;color:#3a3835;max-width:520px;margin-bottom:1.6rem}
+.hero-excerpt strong{font-weight:500}
+.btn-primary{display:inline-flex;align-items:center;gap:7px;background:var(--ink);color:var(--paper);text-decoration:none;font-size:12px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;padding:10px 20px;border-radius:2px;transition:background .2s}
+.btn-primary:hover{background:var(--accent)}
+.hero-img{aspect-ratio:4/3;background:var(--cream);border-radius:2px;overflow:hidden}
+.hero-img svg{width:100%;height:100%}
+.hero-cap{font-size:10px;color:var(--muted);margin-top:6px;font-family:var(--mono)}
+
+/* RUBRICS BAR — seule et unique */
+.rubrics-bar{border-bottom:1px solid var(--rule);background:var(--paper);position:sticky;top:60px;z-index:90}
+.rubrics-inner{max-width:1240px;margin:0 auto;padding:0 2rem;display:flex;overflow-x:auto;scrollbar-width:none}
+.rubrics-inner::-webkit-scrollbar{display:none}
+.rtag{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:12px 16px 12px 0;margin-right:16px;white-space:nowrap;cursor:pointer;background:none;border:none;border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
+.rtag:hover,.rtag.active{color:var(--ink)}
+.rtag.active{border-bottom-color:var(--ink)}
+
+/* RUBRIQUE HEADER */
+.rub-header{display:none;border-bottom:1px solid var(--rule)}
+.rub-header.visible{display:block}
+.rub-header-inner{max-width:1240px;margin:0 auto;padding:1.25rem 2rem;display:flex;align-items:center;gap:1.5rem}
+.back-btn{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:none;border:1px solid var(--rule);padding:5px 11px;border-radius:2px;cursor:pointer;transition:all .2s;flex-shrink:0}
+.back-btn:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.rh-title{font-family:var(--serif);font-size:1.35rem;font-weight:700;letter-spacing:-.02em;line-height:1.2}
+.rh-desc{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.03em;margin-top:2px}
+
+/* SPOTLIGHT */
+.spotlight{max-width:1240px;margin:0 auto;padding:2rem;border-bottom:1px solid var(--rule)}
+.sp-head{display:flex;align-items:center;gap:1rem;margin-bottom:1.2rem}
+.sp-badge{font-family:var(--mono);font-size:9px;letter-spacing:.15em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:4px 10px;border-radius:2px}
+.sp-line{flex:1;height:1px;background:var(--rule)}
+.sp-date{font-family:var(--mono);font-size:10px;color:var(--muted)}
+.sp-body{display:grid;grid-template-columns:1fr 1fr 210px;gap:1.75rem;background:var(--cream);padding:1.75rem;border-radius:2px}
+@media(max-width:860px){.sp-body{grid-template-columns:1fr}}
+.sp-cat{font-family:var(--mono);font-size:9px;letter-spacing:.11em;text-transform:uppercase;color:var(--accent);margin-bottom:.45rem;display:flex;align-items:center;gap:5px}
+.sp-cat::before{content:'';display:block;width:12px;height:1px;background:var(--accent)}
+.sp-title{font-family:var(--serif);font-size:1.1rem;font-weight:700;line-height:1.25;margin-bottom:.6rem;letter-spacing:-.01em}
+.sp-title em{font-style:italic;color:var(--accent)}
+.sp-desc{font-size:13.5px;color:#4a4845;line-height:1.7;margin-bottom:1rem}
+.sp-btn{display:inline-flex;align-items:center;gap:6px;background:var(--ink);color:var(--paper);text-decoration:none;font-size:11px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;padding:8px 15px;border-radius:2px;transition:background .2s}
+.sp-btn:hover{background:var(--accent)}
+.sp-metrics{display:flex;flex-direction:column;gap:10px}
+.sp-m{display:flex;flex-direction:column;gap:2px;padding-bottom:10px;border-bottom:1px solid var(--rule)}
+.sp-m:last-child{border-bottom:none;padding-bottom:0}
+.sp-mlbl{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.sp-mval{font-family:var(--mono);font-size:16px;color:var(--ink)}
+.sp-mdelta{font-family:var(--mono);font-size:10px}
+.sp-mdelta.up{color:#2d7a3a}.sp-mdelta.dn{color:var(--accent)}
+.sp-chart-lbl{font-family:var(--mono);font-size:9px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+.sp-chart svg{width:100%;height:72px;margin:4px 0}
+
+/* MAIN GRID */
+.main-grid{max-width:1240px;margin:0 auto;padding:2.5rem 2rem;display:grid;grid-template-columns:1fr 295px;gap:2.75rem;align-items:start}
+.section-lbl{font-family:var(--mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);padding-bottom:.85rem;border-bottom:2px solid var(--ink);margin-bottom:1.75rem}
+
+/* ARTICLE CARD */
+.art-card{display:grid;grid-template-columns:1fr 170px;gap:1.2rem;padding-bottom:1.6rem;border-bottom:1px solid var(--rule);margin-bottom:1.6rem;text-decoration:none;color:inherit;transition:opacity .2s}
+.art-card:hover{opacity:.75}
+.art-card:last-child{border-bottom:none;margin-bottom:0}
+.art-cat{font-family:var(--mono);font-size:9px;letter-spacing:.11em;text-transform:uppercase;color:var(--accent);margin-bottom:.4rem;display:flex;align-items:center;gap:5px}
+.art-cat::before{content:'';display:block;width:11px;height:1px;background:var(--accent)}
+.art-title{font-family:var(--serif);font-size:.98rem;line-height:1.3;font-weight:700;margin-bottom:.45rem;letter-spacing:-.01em}
+.art-excerpt{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:.8rem}
+.art-meta{font-family:var(--mono);font-size:9px;letter-spacing:.05em;color:var(--muted);display:flex;gap:.85rem;flex-wrap:wrap}
+.art-thumb{background:var(--cream);border-radius:2px;height:105px;display:flex;align-items:center;justify-content:center}
+.art-thumb svg{opacity:.3}
+
+/* SIDEBAR */
+.sidebar{display:flex;flex-direction:column;gap:1.75rem}
+.nl-box{background:var(--ink);color:var(--paper);padding:1.6rem;border-radius:2px}
+.nl-tag{font-family:var(--mono);font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem}
+.nl-title{font-family:var(--serif);font-size:1.2rem;font-weight:700;line-height:1.25;margin-bottom:.55rem}
+.nl-desc{font-size:12.5px;color:#999;line-height:1.6;margin-bottom:1.1rem}
+.nl-form{display:flex;flex-direction:column;gap:6px}
+.nl-form input{background:#1e1d1b;border:1px solid #2e2d2b;color:var(--paper);padding:9px 12px;font-size:13px;font-family:var(--sans);border-radius:2px;outline:none;transition:border-color .2s}
+.nl-form input::placeholder{color:#555}
+.nl-form input:focus{border-color:var(--accent)}
+.nl-form button{background:var(--accent);color:#fff;border:none;padding:9px 12px;font-size:11px;font-weight:500;letter-spacing:.09em;text-transform:uppercase;font-family:var(--sans);cursor:pointer;border-radius:2px;transition:background .2s}
+.nl-form button:hover{background:#a8281c}
+.nl-notice{font-size:9px;color:#444;margin-top:6px;font-family:var(--mono)}
+.chart-card{background:var(--cream);border-radius:2px;padding:1.2rem}
+.chart-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.85rem}
+.chart-title{font-family:var(--serif);font-size:14px;font-weight:700;line-height:1.3}
+.chart-badge{font-family:var(--mono);font-size:9px;background:var(--accent-soft);color:var(--accent);padding:3px 7px;border-radius:2px;letter-spacing:.05em;text-transform:uppercase}
+.chart-area{height:95px;margin-bottom:.6rem}
+.chart-area svg{width:100%;height:100%}
+.chart-foot{font-family:var(--mono);font-size:9px;color:var(--muted);display:flex;justify-content:space-between}
+.s-lbl{font-family:var(--mono);font-size:9px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);padding-bottom:.6rem;border-bottom:1px solid var(--rule);margin-bottom:1rem}
+.s-art{display:flex;gap:9px;padding-bottom:.9rem;border-bottom:1px solid var(--rule);margin-bottom:.9rem;text-decoration:none;color:inherit;transition:opacity .2s}
+.s-art:hover{opacity:.75}
+.s-art:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.s-num{font-family:var(--mono);font-size:17px;color:var(--rule);min-width:24px;line-height:1;padding-top:2px}
+.s-title{font-family:var(--serif);font-size:13px;line-height:1.35;font-weight:700;margin-bottom:3px}
+.s-meta{font-family:var(--mono);font-size:9px;color:var(--muted)}
+.social-box{padding-top:.9rem;border-top:1px solid var(--rule)}
+.social-lbl{font-family:var(--mono);font-size:9px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-bottom:.8rem}
+.social-links{display:flex;gap:5px;flex-wrap:wrap}
+.slink{font-size:10px;color:var(--muted);text-decoration:none;background:var(--cream);padding:5px 10px;border-radius:2px;transition:all .2s;font-family:var(--mono);letter-spacing:.04em}
+.slink:hover{background:var(--ink);color:var(--paper)}
+
+/* THEMES */
+.themes{background:var(--ink);color:var(--paper);padding:2.25rem 2rem}
+.themes-inner{max-width:1240px;margin:0 auto}
+.themes-lbl{font-family:var(--mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:#555;margin-bottom:1.5rem;display:flex;align-items:center;gap:10px}
+.themes-lbl::after{content:'';flex:1;height:1px;background:#222}
+.themes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#1c1b19}
+.theme-card{background:var(--ink);padding:1.6rem;transition:background .2s;cursor:pointer}
+.theme-card:hover{background:#181714}
+.theme-icon{font-size:20px;margin-bottom:.75rem;line-height:1}
+.theme-name{font-family:var(--serif);font-size:.95rem;font-weight:700;margin-bottom:.35rem;letter-spacing:-.01em}
+.theme-desc{font-size:12px;color:#777;line-height:1.6}
+.theme-count{font-family:var(--mono);font-size:10px;color:var(--accent);margin-top:.75rem}
+
+/* FOOTER */
+footer{background:#0a0908;color:#666;padding:1.4rem 2rem .9rem}
+.f-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:1.75rem;padding-bottom:1.1rem;border-bottom:1px solid #181614;margin-bottom:.8rem}
+.f-logo{font-family:var(--serif);font-size:17px;font-weight:700;color:var(--paper);text-decoration:none;letter-spacing:-.02em;display:flex;align-items:baseline;gap:3px;margin-bottom:.75rem}
+.f-tagline{font-size:12px;color:#4a4845;line-height:1.6}
+.f-col-title{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:#3a3835;margin-bottom:.75rem}
+.f-links{display:flex;flex-direction:column;gap:6px}
+.f-links a{font-size:12px;color:#555;text-decoration:none;transition:color .2s}
+.f-links a:hover{color:var(--paper)}
+.f-bottom{max-width:1240px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:9px;letter-spacing:.05em;color:#302e2c;flex-wrap:wrap;gap:5px}
+.f-bottom a{color:#302e2c;text-decoration:none;transition:color .2s}
+.f-bottom a:hover{color:#666}
+
+/* SEARCH OVERLAY */
+.search-overlay{display:none;position:fixed;inset:0;background:rgba(15,14,13,.76);z-index:300;align-items:flex-start;justify-content:center;padding-top:90px}
+.search-overlay.open{display:flex}
+.search-box{background:var(--paper);width:100%;max-width:590px;margin:0 1.5rem;border-radius:2px;box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.search-row{display:flex;align-items:center;padding:0 1.2rem;border-bottom:1px solid var(--rule);gap:10px}
+.search-row input{flex:1;border:none;background:transparent;padding:.95rem 0;font-size:15px;font-family:var(--sans);color:var(--ink);outline:none}
+.search-row input::placeholder{color:var(--muted)}
+.search-close{background:none;border:none;cursor:pointer;font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:.08em;padding:4px 8px;text-transform:uppercase;flex-shrink:0}
+.search-results{max-height:340px;overflow-y:auto}
+.sr-item{display:flex;flex-direction:column;gap:3px;padding:.85rem 1.2rem;border-bottom:1px solid var(--rule);text-decoration:none;color:inherit;transition:background .15s}
+.sr-item:hover{background:var(--cream)}
+.sr-item:last-child{border-bottom:none}
+.sr-title{font-family:var(--serif);font-size:14px;font-weight:700}
+.sr-meta{font-family:var(--mono);font-size:9px;color:var(--muted);letter-spacing:.05em}
+.sr-empty{padding:1.4rem 1.2rem;font-size:12px;color:var(--muted);font-family:var(--mono)}
+
+/* INNER PAGES */
+.inner-page{display:none;max-width:760px;margin:0 auto;padding:2.75rem 2rem 5rem;animation:fadeUp .3s ease both}
+.inner-page.active{display:block}
+.inner-back{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);background:none;border:1px solid var(--rule);padding:5px 11px;border-radius:2px;cursor:pointer;margin-bottom:1.6rem;transition:all .2s}
+.inner-back:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.inner-crumb{font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:.05em;margin-bottom:1.1rem;display:flex;align-items:center;gap:7px}
+.inner-crumb a{color:var(--muted);text-decoration:none}
+.inner-crumb a:hover{color:var(--ink)}
+.inner-page h1{font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;letter-spacing:-.02em;margin-bottom:.4rem;line-height:1.2}
+.page-sub{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.05em;margin-bottom:2rem;padding-bottom:1.6rem;border-bottom:1px solid var(--rule)}
+.inner-page h2{font-family:var(--serif);font-size:1.15rem;font-weight:700;margin:2rem 0 .6rem;letter-spacing:-.01em}
+.inner-page p{font-size:15px;line-height:1.8;color:#3a3835;margin-bottom:.85rem}
+.inner-page ul{margin:.4rem 0 .85rem 1.5rem}
+.inner-page ul li{font-size:15px;line-height:1.8;color:#3a3835;margin-bottom:.3rem}
+.team-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.2rem}
+.team-card{background:var(--cream);padding:1.3rem;border-radius:2px}
+.team-av{width:38px;height:38px;border-radius:50%;background:var(--ink);color:var(--paper);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:13px;font-weight:700;margin-bottom:.6rem}
+.team-name{font-family:var(--serif);font-size:14px;font-weight:700;margin-bottom:2px}
+.team-role{font-family:var(--mono);font-size:9px;color:var(--accent);letter-spacing:.09em;text-transform:uppercase;margin-bottom:.4rem}
+.team-bio{font-size:12.5px;color:var(--muted);line-height:1.6}
+.cform{display:flex;flex-direction:column;gap:.85rem;margin-top:1.3rem}
+.fg{display:flex;flex-direction:column;gap:5px}
+.flabel{font-family:var(--mono);font-size:9px;letter-spacing:.11em;text-transform:uppercase;color:var(--muted)}
+.finput,.fselect,.ftextarea{background:var(--cream);border:1px solid var(--rule);color:var(--ink);padding:9px 12px;font-size:14px;font-family:var(--sans);border-radius:2px;outline:none;transition:border-color .2s;width:100%}
+.finput:focus,.fselect:focus,.ftextarea:focus{border-color:var(--ink)}
+.ftextarea{resize:vertical;min-height:110px}
+.fsubmit{background:var(--ink);color:var(--paper);border:none;padding:10px 20px;font-size:12px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;font-family:var(--sans);cursor:pointer;border-radius:2px;transition:background .2s;align-self:flex-start}
+.fsubmit:hover{background:var(--accent)}
+.fsuccess{display:none;background:#edf7ee;border:1px solid #b8debb;color:#2d7a3a;padding:.85rem 1rem;border-radius:2px;font-size:13px;font-family:var(--mono);margin-top:.4rem}
+.legal-block{margin-bottom:1.6rem;padding-bottom:1.6rem;border-bottom:1px solid var(--rule)}
+.legal-block:last-child{border-bottom:none}
+
+/* MOBILE */
+@media(max-width:768px){
+  .burger{display:flex}
+  .nav-l,.nav-r{display:none}
+  .nav-l.open{display:flex;flex-direction:column;position:absolute;top:60px;left:0;right:0;background:var(--paper);padding:1.2rem 2rem;border-bottom:1px solid var(--rule);gap:1rem;z-index:99}
+  .nav-r.open{display:flex;flex-direction:row;position:absolute;top:60px;left:0;right:0;background:var(--paper);padding:.75rem 2rem 1.2rem;gap:.75rem;z-index:99;border-bottom:1px solid var(--rule)}
+  .hero{grid-template-columns:1fr}
+  .hero-img{display:none}
+  .main-grid{grid-template-columns:1fr}
+  .sidebar{order:-1}
+  .art-card{grid-template-columns:1fr}
+  .art-thumb{height:150px}
+  .themes-grid{grid-template-columns:1fr}
+  .f-inner{grid-template-columns:1fr;gap:1.25rem}
+  .f-bottom{flex-direction:column;text-align:center}
+  .team-grid{grid-template-columns:1fr}
+}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.hero,.main-grid{animation:fadeUp .4s ease both}
+.main-grid{animation-delay:.07s}
+</style>
+</head>
+<body>
+
+<!-- TICKER -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span class="ti">EUR/USD <span class="dn">1,0741 ▼ −0,18%</span></span><span class="tsep">·</span>
+    <span class="ti">CAC 40 <span class="dn">7 214 ▼ −0,62%</span></span><span class="tsep">·</span>
+    <span class="ti">BRENT <span class="up">112,40 $ ▲ +1,23%</span></span><span class="tsep">·</span>
+    <span class="ti">OR <span class="up">4 694 $ ▲ +0,54%</span></span><span class="tsep">·</span>
+    <span class="ti">BTC <span class="up">94 812 $ ▲ +1,87%</span></span><span class="tsep">·</span>
+    <span class="ti">VIX <span class="dn">22,4 ▼ −1,8%</span></span><span class="tsep">·</span>
+    <span class="ti">10Y US <span class="up">4,71% ▲</span></span><span class="tsep">·</span>
+    <span class="ti">DAX <span class="dn">17 821 ▼ −0,44%</span></span><span class="tsep">·</span>
+    <span class="ti">USD/CNY <span class="up">7,28 ▲</span></span><span class="tsep">·</span>
+    <span class="ti">EUR/USD <span class="dn">1,0741 ▼ −0,18%</span></span><span class="tsep">·</span>
+    <span class="ti">CAC 40 <span class="dn">7 214 ▼ −0,62%</span></span><span class="tsep">·</span>
+    <span class="ti">BRENT <span class="up">112,40 $ ▲ +1,23%</span></span><span class="tsep">·</span>
+    <span class="ti">OR <span class="up">4 694 $ ▲ +0,54%</span></span><span class="tsep">·</span>
+    <span class="ti">BTC <span class="up">94 812 $ ▲ +1,87%</span></span><span class="tsep">·</span>
+    <span class="ti">VIX <span class="dn">22,4 ▼ −1,8%</span></span><span class="tsep">·</span>
+    <span class="ti">10Y US <span class="up">4,71% ▲</span></span><span class="tsep">·</span>
+    <span class="ti">DAX <span class="dn">17 821 ▼ −0,44%</span></span><span class="tsep">·</span>
+    <span class="ti">USD/CNY <span class="up">7,28 ▲</span></span><span class="tsep">·</span>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="hinner">
+    <a class="logo" href="#" onclick="showPage('home');return false">GLOBE<span class="logo-dot">·</span></a>
+    <div class="nav-l" id="navL">
+      <a href="#" onclick="showPage('home');return false">Accueil</a>
+      <a href="#" onclick="showPage('about');return false">À propos</a>
+      <a href="#" onclick="showPage('contact');return false">Contact</a>
+    </div>
+    <div class="nav-r" id="navR">
+      <button class="search-btn" onclick="openSearch()" title="Rechercher">
+        <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="6.5" cy="6.5" r="4.5"/><line x1="10.5" y1="10.5" x2="14" y2="14"/></svg>
+      </button>
+      <a href="#" class="nav-cta" onclick="return false">S'abonner</a>
+    </div>
+    <button class="burger" id="burger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- CONTENU PRINCIPAL -->
+<div id="homeContent">
+
+<section class="hero">
+  <div>
+    <div class="hero-kicker">À la une · 30 avril 2026</div>
+    <h1>Détroit d'Ormuz : <em>deux mois de crise</em> qui ont changé l'économie mondiale</h1>
+    <div class="hero-meta">
+      <span>Par Sophie Bertin</span><span>·</span>
+      <span>30 avril 2026</span><span>·</span>
+      <span>10 min de lecture</span>
+    </div>
+    <p class="hero-excerpt">Depuis les frappes américano-israéliennes de février, le détroit d'Ormuz est sous tension permanente. Brent à 112 $, essence au-dessus de 2 €, inflation qui repart — voici ce que deux mois de crise ont vraiment changé pour les marchés et vos finances.</p>
+    <a href="#" class="btn-primary">Lire l'analyse <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+  </div>
+  <div>
+    <div class="hero-img">
+      <svg viewBox="0 0 360 270" xmlns="http://www.w3.org/2000/svg">
+        <rect width="360" height="270" fill="#ede9e1"/>
+        <g stroke="#d8d4cc" stroke-width=".5" opacity=".6">
+          <line x1="0" y1="54" x2="360" y2="54"/><line x1="0" y1="108" x2="360" y2="108"/>
+          <line x1="0" y1="162" x2="360" y2="162"/><line x1="0" y1="216" x2="360" y2="216"/>
+          <line x1="72" y1="0" x2="72" y2="270"/><line x1="144" y1="0" x2="144" y2="270"/>
+          <line x1="216" y1="0" x2="216" y2="270"/><line x1="288" y1="0" x2="288" y2="270"/>
+        </g>
+        <polygon fill="#c8382a" fill-opacity=".07" points="20,240 20,195 72,188 120,178 168,162 216,140 252,105 288,82 340,55 340,240"/>
+        <polyline fill="none" stroke="#c8382a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" points="20,195 72,188 120,178 168,162 216,140 252,105 288,82 340,55"/>
+        <circle cx="340" cy="55" r="4" fill="#c8382a"/>
+        <line x1="216" y1="25" x2="216" y2="248" stroke="#0f0e0d" stroke-width=".8" stroke-dasharray="3,3" opacity=".25"/>
+        <text x="220" y="36" font-family="'DM Mono',monospace" font-size="9" fill="#7a7570">Crise Ormuz</text>
+        <text x="18" y="260" font-family="'DM Mono',monospace" font-size="9" fill="#7a7570">Jan 26</text>
+        <text x="200" y="260" font-family="'DM Mono',monospace" font-size="9" fill="#7a7570">Mars 26</text>
+        <text x="318" y="260" font-family="'DM Mono',monospace" font-size="9" fill="#7a7570">Avr 26</text>
+        <text x="18" y="16" font-family="'DM Mono',monospace" font-size="9" fill="#7a7570">BRENT ($/baril)</text>
+      </svg>
+    </div>
+    <p class="hero-cap">Brent janv.–avr. 2026 · Source : ICE Futures</p>
+  </div>
+</section>
+
+<!-- RUBRICS BAR — une seule -->
+<nav class="rubrics-bar">
+  <div class="rubrics-inner">
+    <button class="rtag active" onclick="selectRubric('Tout',this)">Tout</button>
+    <button class="rtag" onclick="selectRubric('Économie mondiale',this)">Économie</button>
+    <button class="rtag" onclick="selectRubric('Géopolitique',this)">Géopolitique</button>
+    <button class="rtag" onclick="selectRubric('Finance & marchés',this)">Finance</button>
+    <button class="rtag" onclick="selectRubric('Tech',this)">Tech</button>
+    <button class="rtag" onclick="selectRubric('Industrie',this)">Industrie</button>
+    <button class="rtag" onclick="selectRubric('Luxe',this)">Luxe</button>
+    <button class="rtag" onclick="selectRubric('Matières premières',this)">Matières premières</button>
+    <button class="rtag" onclick="selectRubric('Énergie',this)">Énergie</button>
+    <button class="rtag" onclick="selectRubric('Zone euro',this)">Zone euro</button>
+  </div>
+</nav>
+
+<!-- RUBRIQUE HEADER -->
+<div class="rub-header" id="rubriqueHeader">
+  <div class="rub-header-inner">
+    <button class="back-btn" onclick="selectRubric('Tout',document.querySelector('.rtag'))">
+      <svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 1L3 6l5 5"/></svg>
+      Retour
+    </button>
+    <div>
+      <div class="rh-title" id="rhTitle">—</div>
+      <div class="rh-desc" id="rhDesc"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ANALYSE DE LA SEMAINE -->
+<section class="spotlight">
+  <div class="sp-head">
+    <span class="sp-badge">Analyse de la semaine · Finance</span>
+    <div class="sp-line"></div>
+    <span class="sp-date">Semaine du 28 avril 2026</span>
+  </div>
+  <div class="sp-body">
+    <div>
+      <div class="sp-cat">Entreprise cotée · Euronext Paris</div>
+      <div class="sp-title"><em>TotalEnergies</em> — Le paradoxe du géant pétrolier en temps de crise</div>
+      <p class="sp-desc">Alors que le Brent dépasse les 110 $, TotalEnergies engrange des profits records mais fait face à une pression politique et actionnariale croissante sur sa transition énergétique. On décortique le modèle, les marges et ce que ça veut dire pour l'actionnaire.</p>
+      <a href="#" class="sp-btn">Lire l'analyse →</a>
+    </div>
+    <div class="sp-metrics">
+      <div class="sp-m"><span class="sp-mlbl">Cours (Euronext)</span><span class="sp-mval">68,42 €</span><span class="sp-mdelta up">▲ +12,4 % sur 2 mois</span></div>
+      <div class="sp-m"><span class="sp-mlbl">Capitalisation</span><span class="sp-mval">172 Md €</span><span class="sp-mdelta up">▲ record depuis 2023</span></div>
+      <div class="sp-m"><span class="sp-mlbl">Marge nette T1 2026</span><span class="sp-mval">9,8 %</span><span class="sp-mdelta up">▲ +2,1 pt sur 1 an</span></div>
+      <div class="sp-m"><span class="sp-mlbl">P/E estimé 2026</span><span class="sp-mval">8,3×</span><span class="sp-mdelta up">↗ sous-évalué vs secteur</span></div>
+    </div>
+    <div>
+      <span class="sp-chart-lbl">Cours 6 mois</span>
+      <svg viewBox="0 0 200 72" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <polygon fill="#c8382a" fill-opacity=".07" points="0,72 0,54 35,49 70,44 100,40 130,29 165,18 200,13 200,72"/>
+        <polyline fill="none" stroke="#c8382a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" points="0,54 35,49 70,44 100,40 130,29 165,18 200,13"/>
+        <circle cx="200" cy="13" r="3" fill="#c8382a"/>
+        <text x="2" y="11" font-family="'DM Mono',monospace" font-size="7" fill="#7a7570">75 €</text>
+        <text x="2" y="40" font-family="'DM Mono',monospace" font-size="7" fill="#7a7570">60 €</text>
+        <text x="2" y="68" font-family="'DM Mono',monospace" font-size="7" fill="#7a7570">50 €</text>
+      </svg>
+      <span class="sp-chart-lbl" style="display:block;text-align:right;margin-top:2px">Nov. 2025 — Avr. 2026</span>
+    </div>
+  </div>
+</section>
+
+<!-- MAIN GRID -->
+<div class="main-grid">
+  <main>
+    <div class="section-lbl">Dernières analyses · Avril 2026</div>
+
+    <a class="art-card" href="#">
+      <div>
+        <div class="art-cat">Géopolitique</div>
+        <div class="art-title">Iran — États-Unis : négociations au point mort, le détroit d'Ormuz reste sous tension</div>
+        <p class="art-excerpt">Les pourparlers d'Islamabad ont échoué ce week-end. Deux mois après les frappes, le cessez-le-feu reste fragile et les marchés pétroliers nerveux.</p>
+        <div class="art-meta"><span>Sophie Bertin</span><span>·</span><span>29 avril 2026</span><span>·</span><span>9 min</span></div>
+      </div>
+      <div class="art-thumb">
+        <svg viewBox="0 0 90 70" fill="none" width="60">
+          <circle cx="45" cy="34" r="20" stroke="#0f0e0d" stroke-width="1.2" opacity=".2"/>
+          <circle cx="45" cy="34" r="9" fill="#c8382a" opacity=".25" stroke="#c8382a" stroke-width="1.2"/>
+          <line x1="45" y1="14" x2="45" y2="54" stroke="#0f0e0d" stroke-width=".8" opacity=".2"/>
+          <line x1="25" y1="34" x2="65" y2="34" stroke="#0f0e0d" stroke-width=".8" opacity=".2"/>
+        </svg>
+      </div>
+    </a>
+
+    <a class="art-card" href="#">
+      <div>
+        <div class="art-cat">Finance & marchés</div>
+        <div class="art-title">Fed : Powell maintient les taux — le marché commence à douter</div>
+        <p class="art-excerpt">Face à une inflation qui repart sous l'effet du choc pétrolier, la Fed est coincée. Décryptage de la réunion du 30 avril et de ses implications pour votre épargne.</p>
+        <div class="art-meta"><span>Paul Lefèvre</span><span>·</span><span>30 avril 2026</span><span>·</span><span>8 min</span></div>
+      </div>
+      <div class="art-thumb">
+        <svg viewBox="0 0 90 70" fill="none" width="60">
+          <polyline stroke="#c8382a" stroke-width="1.8" fill="none" stroke-linecap="round" points="8,52 22,44 36,32 50,37 64,25 82,18"/>
+          <polyline stroke="#0f0e0d" stroke-width=".9" fill="none" stroke-linecap="round" stroke-dasharray="3,2" points="8,56 22,53 36,48 50,46 64,44 82,42"/>
+        </svg>
+      </div>
+    </a>
+
+    <a class="art-card" href="#">
+      <div>
+        <div class="art-cat">Économie mondiale</div>
+        <div class="art-title">FMI : croissance mondiale revue à 2,6 % en 2026 — la facture du choc Ormuz</div>
+        <p class="art-excerpt">Nouvelles prévisions publiées cette semaine. Le choc pétrolier se chiffre déjà en points de PIB. On vous explique qui paie le plus et ce que ça change pour vous.</p>
+        <div class="art-meta"><span>Nicolas Aubry</span><span>·</span><span>27 avril 2026</span><span>·</span><span>7 min</span></div>
+      </div>
+      <div class="art-thumb">
+        <svg viewBox="0 0 90 70" fill="none" width="60">
+          <rect x="10" y="40" width="10" height="18" fill="#c8382a" opacity=".35"/>
+          <rect x="24" y="27" width="10" height="31" fill="#0f0e0d" opacity=".18"/>
+          <rect x="38" y="34" width="10" height="24" fill="#0f0e0d" opacity=".14"/>
+          <rect x="52" y="20" width="10" height="38" fill="#c8382a" opacity=".22"/>
+          <rect x="66" y="30" width="10" height="28" fill="#0f0e0d" opacity=".18"/>
+          <line x1="6" y1="58" x2="84" y2="58" stroke="#0f0e0d" stroke-width=".7" opacity=".2"/>
+        </svg>
+      </div>
+    </a>
+  </main>
+
+  <aside class="sidebar">
+    <div class="nl-box">
+      <div class="nl-tag">Newsletter · 1,99 €/mois</div>
+      <div class="nl-title">L'essentiel chaque semaine</div>
+      <p class="nl-desc">Actu décryptée + analyse boursière approfondie. Pas de bruit, seulement ce qui compte.</p>
+      <div class="nl-form">
+        <input type="email" id="nlEmail" placeholder="votre@email.com">
+        <button onclick="subscribeNl()">S'abonner →</button>
+      </div>
+      <p class="nl-notice">Aucun spam · Désabonnement en un clic</p>
+    </div>
+
+    <div class="chart-card">
+      <div class="chart-head">
+        <div class="chart-title">Inflation zone euro</div>
+        <span class="chart-badge">Avr. 2026</span>
+      </div>
+      <div class="chart-area">
+        <svg viewBox="0 0 280 95" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+          <defs><linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#c8382a" stop-opacity=".13"/><stop offset="100%" stop-color="#c8382a" stop-opacity="0"/></linearGradient></defs>
+          <polygon fill="url(#g1)" points="0,95 0,76 35,50 70,30 105,17 140,27 175,38 210,44 245,36 280,42 280,95"/>
+          <polyline fill="none" stroke="#c8382a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" points="0,76 35,50 70,30 105,17 140,27 175,38 210,44 245,36 280,42"/>
+          <circle cx="280" cy="42" r="3" fill="#c8382a"/>
+          <text x="2" y="16" font-family="'DM Mono',monospace" font-size="8" fill="#7a7570">10%</text>
+          <text x="2" y="52" font-family="'DM Mono',monospace" font-size="8" fill="#7a7570">5%</text>
+          <text x="2" y="90" font-family="'DM Mono',monospace" font-size="8" fill="#7a7570">0%</text>
+        </svg>
+      </div>
+      <div class="chart-foot"><span>Jan 2022 — Avr 2026</span><span>Eurostat</span></div>
+    </div>
+
+    <div>
+      <div class="s-lbl">Les plus lus cette semaine</div>
+      <a class="s-art" href="#"><div class="s-num">01</div><div><div class="s-title">Pétrole à 112 $ : qui gagne, qui perd vraiment ?</div><div class="s-meta">Énergie · 6 min</div></div></a>
+      <a class="s-art" href="#"><div class="s-num">02</div><div><div class="s-title">BCE : la pause des taux devient un pari risqué</div><div class="s-meta">Zone euro · 7 min</div></div></a>
+      <a class="s-art" href="#"><div class="s-num">03</div><div><div class="s-title">LVMH T1 2026 : le luxe résiste encore</div><div class="s-meta">Luxe · 8 min</div></div></a>
+      <a class="s-art" href="#"><div class="s-num">04</div><div><div class="s-title">IA et emploi : les destructions commencent</div><div class="s-meta">Tech · 9 min</div></div></a>
+    </div>
+
+    <div class="social-box">
+      <div class="social-lbl">Suivez GLOBE</div>
+      <div class="social-links">
+        <a href="#" class="slink">X / Twitter</a>
+        <a href="#" class="slink">LinkedIn</a>
+        <a href="#" class="slink">YouTube</a>
+        <a href="#" class="slink">Substack</a>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<!-- THEMES -->
+<section class="themes">
+  <div class="themes-inner">
+    <div class="themes-lbl">Nos grandes thématiques</div>
+    <div class="themes-grid">
+      <div class="theme-card"><div class="theme-icon">◈</div><div class="theme-name">Économie mondiale</div><p class="theme-desc">Croissance, inflation, commerce international et cycles macroéconomiques décryptés simplement.</p><div class="theme-count">↗ 48 articles</div></div>
+      <div class="theme-card"><div class="theme-icon">◉</div><div class="theme-name">Géopolitique</div><p class="theme-desc">Rapports de force, crises régionales et leurs conséquences économiques directes.</p><div class="theme-count">↗ 61 articles</div></div>
+      <div class="theme-card"><div class="theme-icon">◈</div><div class="theme-name">Finance & Marchés</div><p class="theme-desc">Banques centrales, indices, devises — et analyse d'une entreprise cotée chaque semaine.</p><div class="theme-count">↗ 39 articles</div></div>
+      <div class="theme-card"><div class="theme-icon">◇</div><div class="theme-name">Tech</div><p class="theme-desc">IA, semi-conducteurs, big tech et disruptions sectorielles en langage accessible.</p><div class="theme-count">↗ 22 articles</div></div>
+      <div class="theme-card"><div class="theme-icon">◫</div><div class="theme-name">Industrie & Luxe</div><p class="theme-desc">Réindustrialisation, automobile, aéronautique et grands groupes de luxe.</p><div class="theme-count">↗ 31 articles</div></div>
+      <div class="theme-card"><div class="theme-icon">◑</div><div class="theme-name">Matières premières</div><p class="theme-desc">Or, pétrole, gaz, cuivre, uranium — les nerfs de l'économie réelle mis en perspective.</p><div class="theme-count">↗ 28 articles</div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="f-inner">
+    <div>
+      <a class="f-logo" href="#" onclick="showPage('home');return false">GLOBE<span style="color:var(--accent);font-size:21px;line-height:0;position:relative;top:3px">·</span></a>
+      <p class="f-tagline">Revue indépendante d'analyse économique, géopolitique et financière. Pas de publicité, pas d'actionnaires. Seulement des idées.</p>
+    </div>
+    <div>
+      <div class="f-col-title">Rubriques</div>
+      <div class="f-links">
+        <a href="#">Économie mondiale</a><a href="#">Géopolitique</a>
+        <a href="#">Finance & marchés</a><a href="#">Tech</a>
+        <a href="#">Industrie & Luxe</a><a href="#">Matières premières</a><a href="#">Énergie</a>
+      </div>
+    </div>
+    <div>
+      <div class="f-col-title">La revue</div>
+      <div class="f-links">
+        <a href="#" onclick="showPage('about');return false">À propos</a>
+        <a href="#" onclick="showPage('about');return false">Équipe éditoriale</a>
+        <a href="#">S'abonner</a>
+        <a href="#" onclick="showPage('contact');return false">Contact</a>
+        <a href="#" onclick="showPage('legal');return false">Mentions légales</a>
+      </div>
+    </div>
+  </div>
+  <div class="f-bottom">
+    <span>© 2026 GLOBE — Tous droits réservés</span>
+    <span><a href="#" onclick="showPage('privacy');return false">Politique de confidentialité</a> · <a href="#" onclick="showPage('legal');return false">Mentions légales</a></span>
+  </div>
+</footer>
+</div><!-- /homeContent -->
+
+<!-- SEARCH -->
+<div class="search-overlay" id="searchOverlay" onclick="if(event.target===this)closeSearch()">
+  <div class="search-box">
+    <div class="search-row">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="#7a7570" stroke-width="1.5"><circle cx="6.5" cy="6.5" r="4.5"/><line x1="10.5" y1="10.5" x2="14" y2="14"/></svg>
+      <input type="text" id="searchInput" placeholder="Rechercher un article, un sujet…" oninput="doSearch(this.value)" autocomplete="off">
+      <button class="search-close" onclick="closeSearch()">Esc</button>
+    </div>
+    <div class="search-results" id="searchResults"><div class="sr-empty">Tapez pour rechercher parmi les articles GLOBE…</div></div>
+  </div>
+</div>
+
+<!-- PAGE À PROPOS -->
+<div class="inner-page" id="page-about">
+  <button class="inner-back" onclick="showPage('home')"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 1L3 6l5 5"/></svg> Retour</button>
+  <div class="inner-crumb"><a href="#" onclick="showPage('home');return false">Accueil</a> › À propos</div>
+  <h1>À propos de GLOBE</h1>
+  <p class="page-sub">Revue indépendante · Fondée en 2026</p>
+  <h2>Notre mission</h2>
+  <p>GLOBE est une revue indépendante de vulgarisation économique, géopolitique et financière. Rendre accessibles des sujets complexes, sans sacrifier la rigueur. Ni Bloomberg, ni magazine people — quelque chose entre les deux, pour les curieux.</p>
+  <h2>Notre ligne éditoriale</h2>
+  <p>Indépendance totale. Pas de publicité, pas d'actionnaires, pas de ligne partisane. GLOBE est financé uniquement par ses lecteurs via la newsletter payante.</p>
+  <h2>Ce qu'on couvre</h2>
+  <ul>
+    <li><strong>Économie mondiale</strong> — Croissance, inflation, commerce international</li>
+    <li><strong>Géopolitique</strong> — Rivalités, alliances et conséquences économiques</li>
+    <li><strong>Finance & marchés</strong> — Banques centrales, indices, analyse hebdo d'une cotée</li>
+    <li><strong>Tech</strong> — IA, semi-conducteurs, big tech</li>
+    <li><strong>Industrie & Luxe</strong> — Réindustrialisation, grands groupes</li>
+    <li><strong>Matières premières & Énergie</strong> — Pétrole, or, gaz, transition énergétique</li>
+    <li><strong>Zone euro</strong> — BCE, dette souveraine, intégration européenne</li>
+  </ul>
+  <h2>L'équipe</h2>
+  <div class="team-grid">
+    <div class="team-card"><div class="team-av">NA</div><div class="team-name">Nicolas Aubry</div><div class="team-role">Économie · Zone euro</div><p class="team-bio">Spécialiste des institutions financières mondiales. Suit de près la BCE et le FMI.</p></div>
+    <div class="team-card"><div class="team-av">SB</div><div class="team-name">Sophie Bertin</div><div class="team-role">Géopolitique · Énergie</div><p class="team-bio">Couvre les crises régionales et leurs impacts économiques, avec un focus Moyen-Orient.</p></div>
+    <div class="team-card"><div class="team-av">PL</div><div class="team-name">Paul Lefèvre</div><div class="team-role">Finance & Marchés</div><p class="team-bio">Analyste de formation, décrypte les marchés financiers pour les rendre lisibles à tous.</p></div>
+    <div class="team-card"><div class="team-av">IK</div><div class="team-name">Inès Kovacs</div><div class="team-role">Tech · Industrie · Luxe</div><p class="team-bio">Spécialisée dans les mutations industrielles, la tech et les stratégies des grands groupes.</p></div>
+  </div>
+</div>
+
+<!-- PAGE CONTACT -->
+<div class="inner-page" id="page-contact">
+  <button class="inner-back" onclick="showPage('home')"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 1L3 6l5 5"/></svg> Retour</button>
+  <div class="inner-crumb"><a href="#" onclick="showPage('home');return false">Accueil</a> › Contact</div>
+  <h1>Nous contacter</h1>
+  <p class="page-sub">Presse · Partenariats · Suggestions · Abonnement</p>
+  <p>Une question, une suggestion ou un problème avec votre abonnement ? Nous répondons sous 48h.</p>
+  <div class="cform">
+    <div class="fg"><label class="flabel">Nom complet</label><input class="finput" type="text" placeholder="Votre nom"></div>
+    <div class="fg"><label class="flabel">Email</label><input class="finput" type="email" id="contactEmail" placeholder="votre@email.com"></div>
+    <div class="fg"><label class="flabel">Sujet</label><select class="fselect"><option value="">Choisir…</option><option>Presse / Partenariat</option><option>Suggestion d'article</option><option>Abonnement newsletter</option><option>Autre</option></select></div>
+    <div class="fg"><label class="flabel">Message</label><textarea class="ftextarea" placeholder="Votre message…"></textarea></div>
+    <button class="fsubmit" onclick="submitContact()">Envoyer →</button>
+    <div class="fsuccess" id="contactSuccess">✓ Message envoyé — nous vous répondrons sous 48h.</div>
+  </div>
+  <p style="margin-top:1.75rem;font-family:var(--mono);font-size:11px;color:var(--muted)">Ou directement : <strong>contact@globe-revue.fr</strong></p>
+</div>
+
+<!-- PAGE MENTIONS LÉGALES -->
+<div class="inner-page" id="page-legal">
+  <button class="inner-back" onclick="showPage('home')"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 1L3 6l5 5"/></svg> Retour</button>
+  <div class="inner-crumb"><a href="#" onclick="showPage('home');return false">Accueil</a> › Mentions légales</div>
+  <h1>Mentions légales</h1><p class="page-sub">Dernière mise à jour : avril 2026</p>
+  <div class="legal-block"><h2>Éditeur</h2><p>GLOBE Revue — Publication indépendante en ligne.<br>Contact : contact@globe-revue.fr</p></div>
+  <div class="legal-block"><h2>Hébergement</h2><p>Vercel Inc., 340 Pine Street, Suite 701, San Francisco CA 94104, États-Unis.</p></div>
+  <div class="legal-block"><h2>Propriété intellectuelle</h2><p>Tous les contenus de GLOBE sont la propriété exclusive de GLOBE Revue. Toute reproduction sans autorisation préalable est interdite.</p></div>
+  <div class="legal-block"><h2>Responsabilité</h2><p>Les analyses de GLOBE sont fournies à titre informatif et ne constituent pas des conseils en investissement.</p></div>
+</div>
+
+<!-- PAGE CONFIDENTIALITÉ -->
+<div class="inner-page" id="page-privacy">
+  <button class="inner-back" onclick="showPage('home')"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 1L3 6l5 5"/></svg> Retour</button>
+  <div class="inner-crumb"><a href="#" onclick="showPage('home');return false">Accueil</a> › Politique de confidentialité</div>
+  <h1>Politique de confidentialité</h1><p class="page-sub">Conforme RGPD · Avril 2026</p>
+  <div class="legal-block"><h2>Données collectées</h2><p>GLOBE collecte uniquement l'adresse email des abonnés. Aucune autre donnée personnelle n'est collectée.</p></div>
+  <div class="legal-block"><h2>Usage des données</h2><p>Votre email sert uniquement à envoyer la newsletter. Il n'est jamais vendu ni partagé avec des tiers.</p></div>
+  <div class="legal-block"><h2>Vos droits (RGPD)</h2><p>Droit d'accès, rectification et suppression : contact@globe-revue.fr. Désabonnement à tout moment via le lien dans chaque email.</p></div>
+  <div class="legal-block"><h2>Cookies</h2><p>GLOBE n'utilise pas de cookies publicitaires. Seuls des cookies techniques essentiels peuvent être utilisés.</p></div>
+</div>
+
+<script>
+const ARTICLES=[
+  {title:"Détroit d'Ormuz : deux mois de crise qui ont changé l'économie mondiale",rubrique:"Géopolitique",date:"30 avril 2026",duree:"10 min"},
+  {title:"Iran — États-Unis : négociations au point mort",rubrique:"Géopolitique",date:"29 avril 2026",duree:"9 min"},
+  {title:"Fed : Powell maintient les taux — le marché doute",rubrique:"Finance",date:"30 avril 2026",duree:"8 min"},
+  {title:"FMI : croissance mondiale revue à 2,6 % en 2026",rubrique:"Économie mondiale",date:"27 avril 2026",duree:"7 min"},
+  {title:"TotalEnergies : le paradoxe du géant pétrolier en crise",rubrique:"Finance",date:"28 avril 2026",duree:"10 min"},
+  {title:"Pétrole à 112 $ : qui gagne, qui perd vraiment ?",rubrique:"Énergie",date:"26 avril 2026",duree:"6 min"},
+  {title:"BCE : la pause des taux devient un pari risqué",rubrique:"Zone euro",date:"24 avril 2026",duree:"7 min"},
+  {title:"LVMH T1 2026 : le luxe résiste encore",rubrique:"Luxe",date:"23 avril 2026",duree:"8 min"},
+  {title:"IA et emploi : les destructions commencent vraiment",rubrique:"Tech",date:"22 avril 2026",duree:"9 min"},
+  {title:"Cuivre : la prime verte qui bouleverse les équilibres",rubrique:"Matières premières",date:"21 avril 2026",duree:"7 min"},
+  {title:"Reshoring industriel : l'Europe peut-elle se réindustrialiser ?",rubrique:"Industrie",date:"19 avril 2026",duree:"8 min"},
+  {title:"Chine : récession immobilière et déflation persistante",rubrique:"Économie mondiale",date:"17 avril 2026",duree:"8 min"},
+];
+const RINFO={
+  'Économie mondiale':'Croissance, inflation, commerce international et cycles économiques.',
+  'Géopolitique':'Rapports de force, crises régionales et leurs conséquences économiques.',
+  'Finance & marchés':'Banques centrales, actions, obligations, devises et cryptoactifs.',
+  'Tech':'IA, semi-conducteurs, big tech et disruptions sectorielles.',
+  'Industrie':'Réindustrialisation, chaînes d\'approvisionnement et transition manufacturière.',
+  'Luxe':'Stratégies des grands groupes et marchés du luxe mondial.',
+  'Matières premières':'Or, pétrole, gaz, métaux critiques et soft commodities.',
+  'Énergie':'Transition énergétique, prix du gaz et du pétrole, nucléaire.',
+  'Zone euro':'BCE, économies européennes et intégration de la zone euro.',
+};
+
+function showPage(n){
+  document.querySelectorAll('.inner-page').forEach(p=>p.classList.remove('active'));
+  const hc=document.getElementById('homeContent');
+  if(n==='home'){hc.style.display='';}
+  else{hc.style.display='none';const el=document.getElementById('page-'+n);if(el)el.classList.add('active');}
+  window.scrollTo({top:0,behavior:'smooth'});
+  document.getElementById('navL').classList.remove('open');
+  document.getElementById('navR').classList.remove('open');
+}
+function toggleMenu(){
+  document.getElementById('navL').classList.toggle('open');
+  document.getElementById('navR').classList.toggle('open');
+}
+function selectRubric(name,el){
+  document.querySelectorAll('.rtag').forEach(t=>t.classList.remove('active'));
+  el.classList.add('active');
+  const rh=document.getElementById('rubriqueHeader');
+  if(name==='Tout'){rh.classList.remove('visible');}
+  else{
+    rh.classList.add('visible');
+    document.getElementById('rhTitle').textContent=name;
+    document.getElementById('rhDesc').textContent=RINFO[name]||'';
+    rh.scrollIntoView({behavior:'smooth',block:'start'});
+  }
+}
+function openSearch(){document.getElementById('searchOverlay').classList.add('open');setTimeout(()=>document.getElementById('searchInput').focus(),80);}
+function closeSearch(){document.getElementById('searchOverlay').classList.remove('open');document.getElementById('searchInput').value='';document.getElementById('searchResults').innerHTML='<div class="sr-empty">Tapez pour rechercher parmi les articles GLOBE…</div>';}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeSearch();});
+function doSearch(q){
+  const el=document.getElementById('searchResults');
+  if(!q.trim()){el.innerHTML='<div class="sr-empty">Tapez pour rechercher parmi les articles GLOBE…</div>';return;}
+  const hits=ARTICLES.filter(a=>a.title.toLowerCase().includes(q.toLowerCase())||a.rubrique.toLowerCase().includes(q.toLowerCase()));
+  el.innerHTML=hits.length?hits.map(a=>`<a class="sr-item" href="#" onclick="closeSearch()"><span class="sr-title">${a.title}</span><span class="sr-meta">${a.rubrique} · ${a.date} · ${a.duree}</span></a>`).join(''):'<div class="sr-empty">Aucun résultat pour "'+q+'"</div>';
+}
+function subscribeNl(){
+  const i=document.getElementById('nlEmail'),b=i.nextElementSibling;
+  if(i.value&&i.value.includes('@')){b.textContent='Inscrit ✓';b.style.background='#2d7a3a';i.value='';setTimeout(()=>{b.textContent="S'abonner →";b.style.background='';},3000);}
+  else{i.style.borderColor='var(--accent)';setTimeout(()=>{i.style.borderColor='';},1500);}
+}
+function submitContact(){
+  const e=document.getElementById('contactEmail'),s=document.getElementById('contactSuccess');
+  if(e&&e.value.includes('@')){s.style.display='block';document.querySelectorAll('.cform .finput,.cform .fselect,.cform .ftextarea').forEach(f=>f.value='');}
+  else if(e){e.style.borderColor='#c8382a';setTimeout(()=>{e.style.borderColor='';},1500);}
+}
+</script>
+</body>
+</html>
